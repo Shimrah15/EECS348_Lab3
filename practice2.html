@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Control</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+
+        #paragraph {
+            border: 5px solid black;
+            padding: 20px;
+            margin: 25px auto;
+            max-width: 600px;
+        }
+
+        input {
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Control</h1>
+
+    <div id="paragraph">
+        This is a sample paragraph. Use the controls below to change its
+        border color, border width, and background color.
+    </div>
+
+    <label for="borderColor">Border color (RGB):</label>
+    <input type="text" id="borderColor" placeholder="Example: 255,0,0">
+    <br>
+
+    <label for="borderWidth">Border width:</label>
+    <input type="number" id="borderWidth" placeholder="Example: 10">
+    <br>
+
+    <label for="backgroundColor">Background color (RGB):</label>
+    <input type="text" id="backgroundColor" placeholder="Example: 0,255,255">
+    <br>
+
+    <button onclick="changeStyle()">Apply Changes</button>
+
+    <p><a href="index.html">Return to the main page</a></p>
+
+    <script>
+        function changeStyle() {
+            const paragraph = document.getElementById("paragraph");
+            const borderColor = document.getElementById("borderColor").value;
+            const borderWidth = document.getElementById("borderWidth").value;
+            const backgroundColor =
+                document.getElementById("backgroundColor").value;
+
+            paragraph.style.borderColor = "rgb(" + borderColor + ")";
+            paragraph.style.borderWidth = borderWidth + "px";
+            paragraph.style.backgroundColor =
+                "rgb(" + backgroundColor + ")";
+        }
+    </script>
+</body>
+</html>
